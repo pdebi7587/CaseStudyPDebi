@@ -22,7 +22,7 @@ public class Authorities {
 	@Column(name = "authority")
 	private String authority;
 	
-	@Id
+	
 	@ManyToOne
 	@JoinColumn(name = "username")
 	private User user;
