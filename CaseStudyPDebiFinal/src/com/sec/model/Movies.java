@@ -1,95 +1,112 @@
 package com.sec.model;
 
-import java.util.HashSet;
+import java.sql.Date;
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Movies")
+@Table(name="dcom")
 public class Movies {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="MovieId")
-	private long movId;
+	@Column(name="position")
+	public int movId;
 	
-	@Column(name="MovieName")
-	private String movName;
+	@Column(name="constant")
+	public String tag;
 	
+	@Column(name="title")
+	public String movName;
 	
-	@Column(name="MovieYear")
-	private int movYear;
+	@Column(name="url")
+	public String url;
 	
-	@ManyToMany
-	private List<User> user;
+	@Column(name="ImdbRating")
+	public double imdbR;
 	
+	@Column(name="Runtime")
+	public int time;
 	
+	@Column(name="Genres")
+	public String genres;
 	
-	@OneToMany
-	@JoinTable(name="Movie_Review", 
-	joinColumns= @JoinColumn(name="MovieId"),
-	inverseJoinColumns=@JoinColumn(name="RevId"))
-	private Set<Reviews> revs= new HashSet<Reviews>();
-	
-	
-	
+	@Column(name="release_date")
+	public Date reldate;
 
-	public Movies() {
-		super();
-	}
-	
-	public Movies(long movId, String movName, int movYear) {
-		super();
-		this.movId = movId;
-		this.movName = movName;
-		this.movYear = movYear;
-	}
-
-
-	public long getMovId() {
+	public int getMovId() {
 		return movId;
 	}
 
-
-	public void setMovId(long movId) {
+	public void setMovId(int movId) {
 		this.movId = movId;
 	}
 
+	public String getTag() {
+		return tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+	}
 
 	public String getMovName() {
 		return movName;
 	}
 
-
 	public void setMovName(String movName) {
 		this.movName = movName;
 	}
 
-
-	public int getMovYear() {
-		return movYear;
+	public String getUrl() {
+		return url;
 	}
 
-
-	public void setMovYear(int movYear) {
-		this.movYear = movYear;
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
-	@Override
-	public String toString() {
-		return "Movies [movId=" + movId + ", movName=" + movName + ", movYear=" + movYear + "]";
+	public double getImdbR() {
+		return imdbR;
 	}
+
+	public void setImdbR(double imdbR) {
+		this.imdbR = imdbR;
+	}
+
+	public int getTime() {
+		return time;
+	}
+
+	public void setTime(int time) {
+		this.time = time;
+	}
+
+	public String getGenres() {
+		return genres;
+	}
+
+	public void setGenres(String genres) {
+		this.genres = genres;
+	}
+
+	public Date getReldate() {
+		return reldate;
+	}
+
+	public void setReldate(Date reldate) {
+		this.reldate = reldate;
+	}
+	
+	
+	
+	
+	
 	
 }

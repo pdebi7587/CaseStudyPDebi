@@ -2,6 +2,7 @@ package com.sec.controller;
 
 import com.sec.model.User;
 import com.sec.repository.UserRepository;
+import com.sec.service.MovieService;
 
 import java.security.Principal;
 
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -16,6 +18,9 @@ public class HomeController {
 	
 	@Autowired
 	UserRepository uRep;
+	
+	@Autowired
+	MovieService mService;
 	
 	@RequestMapping(value = {"/", "/welcome"})
 	public ModelAndView getHome(Model model, Principal principal) {
@@ -67,6 +72,14 @@ public class HomeController {
 			mav.addObject("message", "You don't have access to this page!");
 		}
 		
+		return mav;
+	}
+	
+	@RequestMapping(value= "/movies", method = RequestMethod.GET)
+	public ModelAndView getAllMovies() {
+		ModelAndView mav = new ModelAndView("login");
+		
+		mav.addObject("movListBean",mService.getAllMovies());
 		return mav;
 	}
 	

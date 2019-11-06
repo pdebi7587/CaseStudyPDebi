@@ -41,8 +41,8 @@ public class User {
 	private long user_id;
 	
 	
-	@ManyToMany(mappedBy="user")
-	private List<Movies> movies;
+//	@ManyToMany(mappedBy="user")
+//	private List<User_Movies> movies;
 	
 //	@ManyToOne
 //	private Movies movs;
@@ -50,7 +50,7 @@ public class User {
 	public User() {
 		super();
 	}
-	public User(String username, String password, String name, int user_id, boolean enabled,
+	public User(String username, String password, String name, long user_id, boolean enabled,
 			Set<Authorities> authorities) {
 		super();
 		this.username = username;
@@ -63,7 +63,7 @@ public class User {
 	public long getUser_id() {
 		return user_id;
 	}
-	public void setUser_id(int user_id) {
+	public void setUser_id(long user_id) {
 		this.user_id = user_id;
 	}
 	public String getName() {

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
@@ -31,6 +32,30 @@
 				<td> <button type="submit">Login</button>   </td>
 			</tr>
 		</table>
+		
+		<table>
+			<tr>
+				<td>Title </td>
+				<td>ReleaseDate</td>
+				<td>ImdbRating</td>
+				<td>Runtime</td>
+			</tr>
+				<tr>
+				<c:forEach var="movEntry" items="${movListBean}">
+					<tr>
+						<td>${movEntry.title}</td>
+						
+					</tr>
+				</c:forEach>
+				</tr>
+			
+			
+		
+		
+		</table>
+		
+		
+		
 
 	</form>
 </body>

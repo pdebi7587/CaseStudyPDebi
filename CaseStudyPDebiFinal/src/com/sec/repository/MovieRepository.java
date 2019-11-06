@@ -1,15 +1,17 @@
 package com.sec.repository;
 
-import com.sec.model.User;
+import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import com.sec.model.Movies;
+
+
 @Repository
-public interface UserRepository extends CrudRepository<User, String>{
+public interface MovieRepository extends CrudRepository<Movies, Integer>{
+
+	public List<Movies> movList();
 	
-	
-	
-	User findByUsername(String username);
 	
 }
