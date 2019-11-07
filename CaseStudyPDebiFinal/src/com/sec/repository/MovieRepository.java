@@ -9,9 +9,10 @@ import com.sec.model.Movies;
 
 
 @Repository
-public interface MovieRepository extends CrudRepository<Movies, Integer>{
+public interface MovieRepository extends CrudRepository<Movies,Integer>{
 
-	public List<Movies> movList();
+
+	public List<Movies> getMoviesByPage(int pageid, int total);
 	
 	
 }

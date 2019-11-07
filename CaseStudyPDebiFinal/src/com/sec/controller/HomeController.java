@@ -2,7 +2,7 @@ package com.sec.controller;
 
 import com.sec.model.User;
 import com.sec.repository.UserRepository;
-import com.sec.service.MovieService;
+//import com.sec.service.MovieService;
 
 import java.security.Principal;
 
@@ -19,8 +19,6 @@ public class HomeController {
 	@Autowired
 	UserRepository uRep;
 	
-	@Autowired
-	MovieService mService;
 	
 	@RequestMapping(value = {"/", "/welcome"})
 	public ModelAndView getHome(Model model, Principal principal) {
@@ -75,13 +73,6 @@ public class HomeController {
 		return mav;
 	}
 	
-	@RequestMapping(value= "/movies", method = RequestMethod.GET)
-	public ModelAndView getAllMovies() {
-		ModelAndView mav = new ModelAndView("login");
-		
-		mav.addObject("movListBean",mService.getAllMovies());
-		return mav;
-	}
 	
 	
 }

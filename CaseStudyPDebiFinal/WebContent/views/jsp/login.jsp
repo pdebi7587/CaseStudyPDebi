@@ -33,26 +33,12 @@
 			</tr>
 		</table>
 		
-		<table>
-			<tr>
-				<td>Title </td>
-				<td>ReleaseDate</td>
-				<td>ImdbRating</td>
-				<td>Runtime</td>
-			</tr>
-				<tr>
-				<c:forEach var="movEntry" items="${movListBean}">
-					<tr>
-						<td>${movEntry.title}</td>
-						
-					</tr>
-				</c:forEach>
-				</tr>
+	     <a href="viewmov/1">View Movies</a> 
 			
 			
 		
 		
-		</table>
+		
 		
 		
 		
