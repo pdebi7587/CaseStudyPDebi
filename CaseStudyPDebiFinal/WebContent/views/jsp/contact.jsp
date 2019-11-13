@@ -10,6 +10,6 @@
 <jsp:include page="_menu.jsp"></jsp:include>
 
 <br>
-Thanks for reaching out!
+Send your feedback, comments, questions and concerns to pdebi7587@gmail.com!
 </body>
 </html>

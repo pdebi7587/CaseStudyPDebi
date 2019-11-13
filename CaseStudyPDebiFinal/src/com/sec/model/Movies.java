@@ -15,6 +15,27 @@ import javax.persistence.Table;
 @Table(name="dcom")
 public class Movies {
 
+	public Movies(int movId, String tag, String movName, String url, double imdbR, int time, String genres,
+			Date reldate) {
+		super();
+		this.movId = movId;
+		this.tag = tag;
+		this.movName = movName;
+		this.url = url;
+		this.imdbR = imdbR;
+		this.time = time;
+		this.genres = genres;
+		this.reldate = reldate;
+	}
+	
+	
+
+	public Movies() {
+		super();
+	}
+
+
+
 	@Id
 	@Column(name="position")
 	public int movId;
@@ -102,6 +123,14 @@ public class Movies {
 
 	public void setReldate(Date reldate) {
 		this.reldate = reldate;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Movies [movId=" + movId + ", tag=" + tag + ", movName=" + movName + ", url=" + url + ", imdbR=" + imdbR
+				+ ", time=" + time + ", genres=" + genres + ", reldate=" + reldate + "]";
 	}
 	
 	

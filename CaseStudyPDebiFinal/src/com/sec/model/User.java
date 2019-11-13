@@ -29,15 +29,17 @@ public class User {
 	private String username;
 	@Column(name = "password", nullable = false)
 	private String password;
-//	@Column(name = "email", nullable = false)
-//	@Email
-//	private String email;
+	
+	
+	@Column(name = "email", nullable = false)
+	@Email
+	private String email;
 	
 	@Column(name= "name", nullable=false)
 	private String name;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long user_id;
 	
 	
@@ -50,11 +52,12 @@ public class User {
 	public User() {
 		super();
 	}
-	public User(String username, String password, String name, long user_id, boolean enabled,
+	public User(String username, String password,String email, String name, long user_id, boolean enabled,
 			Set<Authorities> authorities) {
 		super();
 		this.username = username;
 		this.password = password;
+		this.email = email;
 		this.name = name;
 		this.user_id = user_id;
 		this.enabled = enabled;
@@ -97,12 +100,12 @@ public class User {
 		this.password = password;
 	}
 	
-//	public String getEmail() {
-//		return email;
-//	}
-//	public void setEmail(String email) {
-//		this.email = email;
-//	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public boolean isEnabled() {
 		return enabled;
 	}

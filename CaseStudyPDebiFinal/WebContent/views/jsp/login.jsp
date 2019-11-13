@@ -14,12 +14,10 @@
 <body>
 <jsp:include page="_menu.jsp"></jsp:include>
 <br>
-<br>
-<br>
 
-	<form action= '<spring:url value="/loginAction" />'   method="post">
-
-		<table>
+<form action= '<spring:url value="/loginAction" />'   method="post" align="center">
+<h2 align="center">GOOD Db</h2>
+		<table align="left">
 			<tr>
 				<td>Username</td>
 				<td> <input type="text" name = "username"></td>
@@ -33,11 +31,11 @@
 			</tr>
 		</table>
 		
-	     <a href="viewmov/1">View Movies</a> 
-			
+		<h1 align = "center">List of Disney Channel Original Movies</h1>
+	<jsp:include page="viewmov.jsp"></jsp:include> 
 			
 		
-		
+
 		
 		
 		

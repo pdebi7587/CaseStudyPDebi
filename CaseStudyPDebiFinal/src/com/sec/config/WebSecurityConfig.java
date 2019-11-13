@@ -38,7 +38,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	protected void configure(HttpSecurity http) throws Exception {
 		
-		http.authorizeRequests().antMatchers("/contactus").permitAll();
+		http.authorizeRequests().antMatchers("/contactus", "/viewmov").permitAll();
 		http.authorizeRequests().antMatchers("/admin/**").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers("/admin/**").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers("/subscriber/**").hasRole("USER");
@@ -54,4 +54,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 			.and()
 			.csrf().disable();	
 	}
+	
+	
+
 }

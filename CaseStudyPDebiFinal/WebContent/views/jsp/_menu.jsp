@@ -4,13 +4,13 @@
 
 
 <div>
-<a href="${pageContext.request.contextPath}">Home</a>
+<a href="${pageContext.request.contextPath}/home">Home</a>
 | &nbsp;
 <a href="${pageContext.request.contextPath}/admin">Admin</a>
 | &nbsp;
-<a href="${pageContext.request.contextPath}/subscriber">Subscriber</a>
+<a href="${pageContext.request.contextPath}/watch">Watch List</a>
 | &nbsp;
-<a href="${pageContext.request.contextPath}/all">Audit</a>
+<a href="${pageContext.request.contextPath}/all">User List</a>
 | &nbsp;
 <a href="${pageContext.request.contextPath}/contactus">Contact Us</a>
 
