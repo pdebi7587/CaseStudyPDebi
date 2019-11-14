@@ -1,0 +1,34 @@
+Prashanti Debi
+PerScholas 18 Week Java Application Developer Case Study
+Application Name: GoodDb
+
+Application Idea: GoodDb is a movie cataloging and reviewing web application with inspiration from goodreads.com and imdb.com. The user is shown a list of Disney Channel Original Movies with it’s name and imdb rating and links to it’s respective imdb page. After making an account, the user can add movies to their own list of watched or to-watch movies which will then allow them to rate and review each movie on their list. User should also be able to see a list of all users and their corresponding movie lists.
+
+Requirements:
+	-Use Tomcat as your server.
+	-Clean HTML and CSS for web application display.
+	-Internal and External CSS style sheets
+	-CRUD operation:
+		Create, Read, Update, Delete only for Users, Movie Lists and Reviews.
+	-At least 6 different pages.
+	-JUnit to perform testing of DAO classes.
+	-README file on GitHub documenting case study
+
+Deliverables:
+	Database (MariaDb):
+-Create a database that reflects the web application with a schema diagram and queries implemented to the database.
+-The tables in the database were created from the entity models Authorities, Users, Movies, Reviews, DCOMlist, FriendList found in the com.sec.models package.
+-The data for the full list of 150 Disney Channel Original Movies were imported from a CSV text file from imdb.com into a table in the database such as follows:
+
+
+
+Core Java & JPA: Develop a back-end environment with java classes.
+	-Models: The entity classes represent the tables in the database.
+		Authority Model: authority and username
+		User Model: user id, username, name, email, password, movie-list id
+		Movies Model: id, title, imdb rating, genres, runtime, release date and url
+		Reviews Model: rev_id, user_id, user review, user rating
+-Persistence.xml: Project Object Model (pom.xml) file that illustrates the maven project configuration with needed dependencies such as for spring framework, apache server and servlet.
+-Persistence Java Class: Static java class that persists objects to interact with the database.
+-Service and Data Access Object: Java classes with functions connected to the database through JPA Persist object
+-Controller Classes: Implement methods that processes input data, executes logic and determines view.
